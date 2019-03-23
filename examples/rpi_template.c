@@ -1,4 +1,5 @@
-#include "ficlib/ficlib_highlevel.h"
+#include "../ficlib/ficlib_highlevel.h"
+
 rpi_gpio gpio = {GPIO_BASE};
 int main()
 {
@@ -16,5 +17,8 @@ int main()
     comwrite(gpio, COM_RESET);
     printf("Start FPGA modules ...\n\n");
     comwrite(gpio, COM_START);    
-    // template ends
+
+    // your code
+
+    UnmapGPIO(&gpio);
 }
